@@ -43,53 +43,53 @@ console.log(max);
 
 //Exercise_3
 
-let a = 23;
+let number = 23;
 
 switch ( true ) {
-    case ( a >= 0 && a < 2 ):
+    case ( number >= 0 && number < 2 ):
         console.log( 'Сутки только начались' );
         break;
-    case ( a >= 2 && a < 5 ):
+    case ( number >= 2 && number < 5 ):
         console.log( 'Еще рано, можно спать' );
         break;
-    case ( a >= 5 && a < 7 ): 
+    case ( number >= 5 && number < 7 ): 
         console.log( 'Мам, можно еще чуть-чуть по спать' );
         break;   
-    case ( a >= 7 && a < 10 ): 
+    case ( number >= 7 && number < 10 ): 
         console.log( 'Собираемся в школу' );
         break;   
-    case ( a >= 10 && a < 14 ): 
+    case ( number >= 10 && number < 14 ): 
         console.log( 'Уроки в школе' );
         break;
-    case ( a >= 14 && a < 17 ): 
+    case ( number >= 14 && number < 17 ): 
         console.log( 'Продленка' );
         break;
-    case ( a >= 17 && a < 19 ): 
+    case ( number >= 17 && number < 19 ): 
         console.log( 'Дорога домой' );
         break;
-    case ( a >= 19 && a <= 23 ):    
+    case ( number >= 19 && number <= 23 ):    
         console.log( 'Урррааа :)' );
         break;
 };
 
 //if else
 
-let d = 15;
+let time = 15;
 
-if ( d >= 0 && d < 2 ) {
+if ( time >= 0 && time < 2 ) {
     console.log( 'Сутки только начались' )
-}  else if ( d >= 2 && d < 5 ) {
+}  else if ( time >= 2 && time < 5 ) {
     console.log( 'Еще рано, можно спать' )
-}  else if ( d >= 5 && d<7 ) {
+}  else if ( time >= 5 && time < 7 ) {
     console.log( 'Мам, можно еще чуть-чуть по спать' )
-}  else if ( d >= 7 && d < 10 ) {
+}  else if ( time >= 7 && time < 10 ) {
     console.log( 'Собираемся в школу' )
-}  else if ( d >= 10 && d < 14 ) {
+}  else if ( time >= 10 && time < 14 ) {
     console.log( 'Уроки в школе' )
-}  else if ( d >= 14 && d < 17 ) {
+}  else if ( time >= 14 && time < 17 ) {
     console.log( 'Продленка' )
-}  else if ( d >= 17 && d < 19 ) {
+}  else if ( time >= 17 && time < 19 ) {
     console.log( 'Дорога домой' )
-}  else if ( d >= 19 && d <= 23 ) {
+}  else if ( time >= 19 && time <= 23 ) {
     console.log( 'Урррааа :)' )
 };
