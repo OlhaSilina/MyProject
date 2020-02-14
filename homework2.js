@@ -5,8 +5,6 @@ let i = 0;
 while (i < str.length) {
     if (str[i] == 'a') {
         sum++
-    } else {
-
     }
     i++;
 }
@@ -22,8 +20,6 @@ let i = 0;
 do {
     if (str[i] == 'a') {
         sum++
-    } else {
-
     }
     i++;
 } while (i < str.length);
@@ -39,8 +35,6 @@ let sum=0;
 for (let i = 0; i < str.length; i++) { 
     if (str[i] == 'a') {
         sum++
-    } else {
-        
     }
 }
 
@@ -54,8 +48,6 @@ function sumLetters(str, letter) {
     for (let i = 0; i < str.length; i++) { 
         if (str[i] == letter) {
             sum++
-        } else {
-            
         }
     continue;
     return sum;
