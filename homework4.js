@@ -109,8 +109,9 @@ console.log(result);
 
 
 var arr = [1, 4, 5, 1, 3, 3];
-var result = arr.map(function (item) {
+var result = arr.map(function res(item) {
   Math.pow(item, 2)
+  return Math.pow(item, 2);
 });
 
 console.log(result);
@@ -148,6 +149,7 @@ console.log(result);
 var arr = ['fasf', 'fa', 'cvser', 'fds', 'faf'];
 var result = arr.filter(function compare(item) {
    item.length < 4
+   return item.length < 4; 
 });
 
 console.log(result);
