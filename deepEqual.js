@@ -1,36 +1,71 @@
 
-var x = {
+  var x = {
     name: "Dima",
     age: 25,
     isAdmin: false,
     canSpeak: true,
+    get: function(a, b) {
+      return a + b;
+    },
     friendNames: ["Саша", "Дмитрий", "Оля"],
     parents: {
-        name: 'Olena',
-        age: 50,
-    },
-  };
+      mother: {
+        name: "Катя",
+        hobbies: ["Пляж", "Фото", "Море"],
+        friends: [
+          {
+            name: "Петр",
+            age: 40
+          }
+        ]
+      },
   
+      father: {
+        name: "Виктор",
+        hobbies: ["Бег", "Солнце", "Туризм"],
+        friends: [
+          {
+            name: "Алексей",
+            age: 50
+          }
+        ]
+      }
+    }
+  };
 
   var y = {
     name: "Dima",
     age: 25,
     isAdmin: false,
     canSpeak: true,
+    get: function(a, b) {
+      return a + b;
+    },
     friendNames: ["Саша", "Дмитрий", "Оля"],
     parents: {
-        name: 'Olena',
-        age: 56,
-    },
+      mother: {
+        name: "Катя",
+        hobbies: ["Пляж", "Фото", "Море"],
+        friends: [
+          {
+            name: "Петр",
+            age: 40
+          }
+        ]
+      },
+  
+      father: {
+        name: "Виктор",
+        hobbies: ["Бег", "Солнце", "Туризм"],
+        friends: [
+          {
+            name: "Алексей",
+            age: 50
+          }
+        ]
+      }
+    }
   };
-
-//   a = function ty(a,b) {
-
-//   }
-
-//   b = function ty(a,b) {
-// }
-
 
 function deepEqual(a, b) {
     if (typeof a === 'number' && typeof b === 'number') {
@@ -53,41 +88,43 @@ function deepEqual(a, b) {
         }
     } else if (typeof a === 'undefined' && typeof b === 'undefined') {
         return true;
-    } else if ( (typeof a === 'object' && a != null && !Array.isArray(a)) && (typeof b === 'object' && b !=null && !Array.isArray(a)) ) {
-        var aKeys = Object.keys(a);
-        var bKeys = Object.keys(b);
+    } else if  ((typeof a === 'object' && a != null) && (typeof b === 'object' && b !=null)) {
 
-        if (aKeys.length != bKeys.length) {
-            return false;
-        } else {
-            for(var i = 0; i < aKeys.length; i++) {
-                 if(aKeys[i] !== bKeys[i]) {
-                    return false;
-                 } else if (!deepEqual(a[aKeys[i]], b[bKeys[i]])) {
-                    return false; 
-                 }                     
-            }
-            return true; 
-        }
-    } else if (Array.isArray(a) && Array.isArray(b) ) {
-        if (a.length != b.length) {
-            return false;
-        } else {
-        for (var i=0; i < a.length; i++) {
-            if (a[i] !== b[i]) {
-                return false;
-            } else if (!deepEqual(a[i],b[i]))  {
-                return false;
-            }
-        }
+        if (Object.keys(a).length !== Object.keys(b).length) {
+			if (Object.keys(a) !== Object.keys(b) && Object.values(a) !== Object.values(b)) {
+				return false;
+			}
+			return false;
+		} else {
+        
+            for (var key in a) {
+			if (typeof a[key] === 'function' && typeof b[key] === 'function') {
+				if (a[key].toString() !== b[key].toString()) {
+					return false;
+				}
+				return true;
+			}
+
+			if (typeof a[key] !== 'object' && typeof b[key] !== 'object') {
+				if (a[key] !== b[key]) {
+					return false;
+				}
+			}
+
+			if (!deepEqual(a[key], b[key])) {
+				return false;
+			}
+		}
         return true;
         }
+       
     } else {
         return false;
     }
-};
-
+}
+    
 var result = deepEqual(x , y);
 
 console.log(result)
+
 
