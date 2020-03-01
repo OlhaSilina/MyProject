@@ -67,6 +67,7 @@ var user = {
     weight: 60,
 };
 
+
 function copy(origin, name, age, color) {
     var newObject = {};
     for (var key in origin) {
@@ -79,3 +80,40 @@ function copy(origin, name, age, color) {
 var userCopy = copy(user, 'Vasya', '28', 'blue');
 
 console.log(userCopy);
+
+
+function copy(origin, name, age, color) {
+    var newObject = {};
+    for (var key in origin) {
+        if (key === 'name') {
+            newObject[key]= name
+        } else if (key === 'age') {
+            newObject[key]= age
+        } else if (key === 'color') {
+            newObject[key]= color 
+        } else {
+        newObject[key] = origin[key];
+        }
+    }
+   return newObject;
+}
+
+var userCopy = copy(user, 'Vasya', 28, 'blue');
+
+console.log(userCopy);
+
+
+
+//Object assign
+
+function copyObjects(arr) {
+    var newObj={};
+
+    for (var i = 0 ; i < arr.length; i++) {
+        for (var key in arr[i]) {
+            newObj[key]=arr[i][key];
+        }
+    }
+    return newObj;
+}
+
